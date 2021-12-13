@@ -105,10 +105,57 @@ st.write('''The food price was given in the local currency.
 st.write(price_2020_df['cur_name'].unique())
 
 st.write('''Each individual currency has a three letter abbreviation.
-         We passed a list of the abbreviations to an API called currencylayer
-         and it returned us a list of conversion rates to US dollars as a JSON.
+         The non-official abbreviation NIS (new Israeli shekel) was changed to ILS (Israeli new shekel).
+         We passed a list of the abbreviations to an API called currencylayer.
+         SSP (South Sudan Pound) had to be removed from the list as our API did not have a value for it.
+         SPP was later added manually. The API returned us a list of conversion rates to US dollars as a JSON.
          This allowed us to convert the prices to US dollars.''')
 
+
+def get_dataframe_data_2():
+
+    return pd.read_csv('raw_data/price_with_USD.csv')
+
+
+price_with_USD = get_dataframe_data_2()
+
+st.write('Our dataframe with prices converted to US dollars:')
+st.write(price_with_USD.head(3))
+
+list_of_non_food = [
+    'Charcoal ', 'Corn Soy Blend (CSB++, food aid) ', 'Cotton ',
+    'Dishwashing liquid ', 'Disinfecting solution ', 'Fuel (Super Petrol) ',
+    'Fuel (diesel) ', 'Fuel (diesel, parallel market) ', 'Fuel (kerosene) ',
+    'Fuel (petrol', 'Handwash soap ', 'Laundry detergent ', 'Laundry soap ',
+    'Salt ', 'Salt (iodised) ', 'Shampoo '
+]
+st.write(
+    '''Looking over the unique values in the column named type, we discovered
+         that a number of non-food items still remained in our data. These were: '''
+)
+st.write(list_of_non_food)
+
+st.write(''' We used a for-loop to remove the non-food entries from our data.
+         Afterwards the following columns were dropped: mp_year, mkt_name, adm1_name, mp_month, cur_name.'''
+         )
+st.write(
+    '''The aforementioned columns do not add any information that could be used in our model to predict the food price.'''
+)
+
+st.write(
+    '''The data was grouped by: the country (adm0_name), food type (type), retail or wholesale (pt_name), unit (um_name).
+         The mean average was taken of: the original food price (mp_price), conversion rate (conv_rate) and food price in US dollars (usd_rate).
+         This gave us a dataset that looked like this:''')
+
+
+def get_dataframe_data_3():
+
+    return pd.read_csv('raw_data/grouped_cleaned_data.csv')
+
+
+grouped_cleaned_data = get_dataframe_data_3()
+
+st.write(grouped_cleaned_data.head(3))
 ##############################################################################
 
 # Section 3:  Discuss the modelling and the results of modelling
