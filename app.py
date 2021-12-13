@@ -3,25 +3,6 @@ import requests
 import pandas as pd
 import numpy as np
 
-st.markdown('# Food Prediction API')
-
-st.markdown('## Predict the price of a food based on nutrition values ')
-
-food = st.text_input('Predict the price of:', 'Carrots')
-st.write('Displaying the price of', food)
-
-api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
-query = food
-response = requests.get(
-    f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
-)
-image_small = response.json()['results'][0]['urls']['small']
-st.image(
-    image_small,
-    caption=
-    f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
-)
-
 ##############################################################################
 
 # Section 1:  Explaining the hypothesis of the project
@@ -163,7 +144,32 @@ st.write(grouped_cleaned_data.head(3))
 ##############################################################################
 
 # Section 4:  Showcase how we would have liked the app to work
+st.markdown('# Our APP')
 
+st.write(
+    '''Despite the limited success of our models ability predict the price of food,
+          we will now showcase how our app should have worked. Below you can type in name of the food
+          you wish to know the price of and the app will return a price and a picture of the food.'''
+)
+
+st.markdown('# Food Prediction APP')
+
+st.markdown('## Predict the price of a food based on nutrition values ')
+
+food = st.text_input('Predict the price of:', 'Carrots')
+st.write('Displaying the price of', food)
+
+api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
+query = food
+response = requests.get(
+    f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
+)
+image_small = response.json()['results'][0]['urls']['small']
+st.image(
+    image_small,
+    caption=
+    f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
+)
 ##############################################################################
 
 # Section 5: Conclusions
