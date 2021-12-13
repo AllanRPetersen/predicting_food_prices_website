@@ -19,3 +19,21 @@ st.image(
     caption=
     f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
 )
+
+##############################################################################
+
+# Section 1:  Explaining the hypothesis of the project
+
+##############################################################################
+
+# Section 2:  Explaining the data of the project
+
+##############################################################################
+
+# Section 3:  Discuss the modelling and the results of modelling
+
+##############################################################################
+
+# Section 4: Conclusions
+
+##############################################################################
