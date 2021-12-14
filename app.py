@@ -1,7 +1,13 @@
+from pandas.core.frame import DataFrame
 import streamlit as st
 import requests
 import pandas as pd
 import numpy as np
+from tensorflow.keras import models
+import joblib
+
+nn_model = models.load_model('raw_data/neural_network_v1.h5')
+preproc = joblib.load('raw_data/preprocessor_v1.joblib')
 
 ##############################################################################
 
@@ -143,8 +149,8 @@ st.write(grouped_cleaned_data.head(3))
 
 ##############################################################################
 
-# Section 4:  Showcase how we would have liked the app to work
-st.markdown('# Our APP')
+#Section 4:  Showcase how we would have liked the app to work
+st.markdown('# Showcasing how we would have liked the APP to work')
 
 st.write(
     '''Despite the limited success of our models ability predict the price of food,
@@ -170,6 +176,99 @@ st.image(
     caption=
     f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
 )
+##############################################################################
+# # Section 4.1: New model
+st.markdown('# Our APP')
+
+st.write('''Although our model was not able to predict the price of food.
+    We were able to predict whether the food would be expensive or not.''')
+
+st.markdown('# Food Prediction APP')
+
+st.markdown(
+    '## Classify whether the food will be expensive or not based on nutrition values '
+)
+
+options = ("Retail", "Wholesale")
+
+value = st.selectbox("Retail or Wholesale", options)
+
+portion_size = st.text_input('Portion Size (g):', '2')
+st.write('  ')
+
+protein = st.text_input('Protein content :', '2')
+st.write('  ')
+
+fat = st.text_input('Fat content:', '3')
+st.write('  ')
+
+carb = st.text_input('Carbohydrate content:', '4')
+st.write('  ')
+
+sugar = st.text_input('Sugar content:', '5')
+st.write('  ')
+
+sodium = st.text_input('Sodium content:', '6')
+st.write('  ')
+
+calcium = st.text_input('Calcium content:', '7')
+st.write('  ')
+
+kcal = st.text_input('Amount of calories (kcal):', '8')
+st.write('  ')
+
+food_cat = pd.read_csv('raw_data/food_categories.csv')
+#st.write(food_cat.head())
+
+category = st.selectbox("Food Category", food_cat)
+
+index_2019 = st.text_input('CPI index 2019:', '10')
+#st.write('  ') CPI value of the country, imput country
+
+# # y = cheap_food_2['expensive']
+# # X = cheap_food_2[['pt_name','protein','fat','carb','sugar','sodium','calcium','kcal','category','2019']]
+
+
+def features():
+    list_of_inputs = {
+        'pt_name': [value],
+        'protein': [(float(protein) / float(portion_size)) * 1000],
+        'fat': [(float(fat) / float(portion_size)) * 1000],
+        'carb': [(float(carb) / float(portion_size)) * 1000],
+        'sugar': [(float(sugar) / float(portion_size)) * 1000],
+        'sodium': [(float(sodium) / float(portion_size)) * 1000],
+        'calcium': [(float(calcium) / float(portion_size)) * 1000],
+        'kcal': [(float(kcal) / float(portion_size)) * 1000],
+        'category': [category],
+        '2019': [float(index_2019)]
+    }
+    inputs = DataFrame.from_dict(list_of_inputs)
+    return inputs
+    #return list_of_inputs
+
+
+if st.button('Predict'):
+    inputs = features()
+    #Scaling dataframe
+    scaled_inputs = preproc.transform(inputs)
+    #Prediction
+    prediction = nn_model.predict(scaled_inputs)
+    st.write(prediction)
+
+else:
+    st.write('I was not clicked 😞')
+
+# api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
+# query = food
+# response = requests.get(
+#     f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
+# )
+# image_small = response.json()['results'][0]['urls']['small']
+# st.image(
+#     image_small,
+#     caption=
+#     f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
+
 ##############################################################################
 
 # Section 5: Conclusions
