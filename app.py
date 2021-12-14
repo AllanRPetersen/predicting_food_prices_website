@@ -47,14 +47,25 @@ st.write(f'Shape of dataset: {price_df.shape}')
 st.markdown('## Data Cleaning')
 
 st.write(
-    '''We decide to use the name of the food to search for the nutritional information in the API (api name?).
+    '''We decide to use the name of the food to search for the nutritional information with the USDA API.
             To get a list of foods to search for we split the string in column cm_name (commitidy name)
-            using a lamda function, generating a new column: type ''')
+            using a lambda function, generating a new column named type.
+    ''')
+
 
 price_df['type'] = price_df['cm_name'].apply(lambda x: x.split('-')[0])
 st.write(price_df.head(3))
 
 price_2020_df = price_df[price_df['mp_year'] == 2020]
+
+st.write('''
+    This new column was cleaned from any special charachcters (ex. !@#$$%*(-_/\)). Once cleaned,
+            we make a new dataframe with the unique values (types of food) present in the dataset, so the
+            API will look for the same information repeatedly, this is particularly important because the
+            USDA API has a limit of 3,600 requests per hour.
+    ''')
+
+
 
 st.write('''We aim to train our with the price of food in 2020.
          Hence, the dataframe was filtered by the year 2020 using Boolean logic.'''
@@ -82,6 +93,54 @@ price_2020_df = price_2020_df.loc[price_2020_df['um_name'].isin(['KG', 'L'])]
 st.write('We now had a dataframe that looked like this:')
 
 st.write(price_2020_df.head(3))
+
+st.markdown('## API function construction')
+
+st.write(
+    '''
+    In order to extract the information we wanted (nutrient values and food category) we couldn't just use the
+    USDA raw API, because the response had many other parameters, so we had to built a series of functions
+    that worked with the API.
+
+    First of all, we selected a fixed list of nutrient information we were interested on (
+        protein,
+        fat,
+        carbohydrates,
+        sugar,
+        sodium,
+        calcium
+        and cholesterol).Besides that, we also extracted the energy content in kcal, the portion size all of these nutrients were measured with,
+        and the category of food it belongs according to the USDA data.
+    '''
+)
+
+st.write(
+    '''
+    There are two main functions, one that look for a food type within "foundation" foods, and the other for branded foods.
+    The third funtion uses the other two and has a fail safe system in order to retrieve the most information possible,
+    that's because some foods are estrictly processed foods, so they will be a branded food instead a of a fundation one.
+
+    Here it is an example of on of the functions and the information it retrieves:
+
+
+    '''
+)
+
+from utils import nutrients_redux, nutrients_redux_2, nutrients_super
+
+food = st.text_input('** Put the name of the food you want to retrieve info:')
+
+display = nutrients_super(food)
+
+display
+
+st.write(
+    '''
+    This applyied to our unique values of food table retrieved us a table of type of food with all of the mentioned information.
+    We had to drop the cholesterol column since it was missing more than 30% of the data
+    '''
+)
+
 
 st.markdown('## Currency')
 
@@ -143,9 +202,49 @@ def get_dataframe_data_3():
 grouped_cleaned_data = get_dataframe_data_3()
 
 st.write(grouped_cleaned_data.head(3))
+
+st.markdown('### Table join')
+st.write('''
+    After all the processing of the USDA nutrient api function and the currency conversion, we inner joined the tables, and further cleaned the new integrated table.
+    ''')
 ##############################################################################
 
 # Section 3:  Discuss the modelling and the results of modelling
+
+st.markdown('## Modelling and results')
+
+st.write(
+    '''
+    We tried different models: Basic linear regressor, KNN regressor, Ridge regressor and a SVR.
+    We saw not so very good results with neither of them, so after trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
+    Unfortunately it was below 50% of the variance explained and vary greatly after each "X" and "y" split, we suspected the data wasn't enough after all the cleaning and selection.
+    '''
+)
+
+st.markdown('### Second dataset')
+
+st.write(
+    '''
+    After the bad results we decided to repeat the whole process but this time with a New Zeland food dataset, unfortunately we got simillar results.
+    So we tought the features we processed and selected weren't enough to explain the price change among the food products.
+    '''
+)
+
+st.markdown('### A new aproach')
+
+st.write(
+    '''
+    After the dissapointing results of the regression models, we decided to change the aim of the project and fit better the data we already had, so we changed our target, instead of predicting the numeric price,
+    we predict if a food product would be expensive or cheap using the nutrients and the other features previously presented.
+    '''
+)
+
+st.write(
+    '''
+    We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
+    We had more than 80% of the data variance explained
+    '''
+)
 
 ##############################################################################
 
