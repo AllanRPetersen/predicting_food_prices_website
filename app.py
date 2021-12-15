@@ -340,25 +340,12 @@ if st.button('Predict'):
         'category': category,
         'index_2019': index_2019
     }
-    prediction = requests.get('http://localhost:8000/predict', params=params)
+    prediction = requests.get('http://localhost:8000/predict/', params=params)
 
-    st.write(prediction)
-    st.write(prediction.url)
     st.write(prediction.json())
 
 else:
     st.write('I was not clicked 😞')
-
-# api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
-# query = food
-# response = requests.get(
-#     f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
-# )
-# image_small = response.json()['results'][0]['urls']['small']
-# st.image(
-#     image_small,
-#     caption=
-#     f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
 
 ##############################################################################
 
