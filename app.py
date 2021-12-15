@@ -346,46 +346,43 @@ index_2019 = st.text_input('CPI index 2019:', '10')
 # # y = cheap_food_2['expensive']
 # # X = cheap_food_2[['pt_name','protein','fat','carb','sugar','sodium','calcium','kcal','category','2019']]
 
-
-def features():
-    list_of_inputs = {
-        'pt_name': [value],
-        'protein': [(float(protein) / float(portion_size)) * 1000],
-        'fat': [(float(fat) / float(portion_size)) * 1000],
-        'carb': [(float(carb) / float(portion_size)) * 1000],
-        'sugar': [(float(sugar) / float(portion_size)) * 1000],
-        'sodium': [(float(sodium) / float(portion_size)) * 1000],
-        'calcium': [(float(calcium) / float(portion_size)) * 1000],
-        'kcal': [(float(kcal) / float(portion_size)) * 1000],
-        'category': [category],
-        '2019': [float(index_2019)]
-    }
-    inputs = DataFrame.from_dict(list_of_inputs)
-    return inputs
-    #return list_of_inputs
-
+# def features():
+#     list_of_inputs = {
+#         'pt_name': [value],
+#         'protein': [(float(protein) / float(portion_size)) * 1000],
+#         'fat': [(float(fat) / float(portion_size)) * 1000],
+#         'carb': [(float(carb) / float(portion_size)) * 1000],
+#         'sugar': [(float(sugar) / float(portion_size)) * 1000],
+#         'sodium': [(float(sodium) / float(portion_size)) * 1000],
+#         'calcium': [(float(calcium) / float(portion_size)) * 1000],
+#         'kcal': [(float(kcal) / float(portion_size)) * 1000],
+#         'category': [category],
+#         '2019': [float(index_2019)]
+#     }
+#     inputs = DataFrame.from_dict(list_of_inputs)
+#     return inputs
+#     #return list_of_inputs
 
 if st.button('Predict'):
-    inputs = features()
-    #Scaling dataframe
-    scaled_inputs = preproc.transform(inputs)
-    #Prediction
-    prediction = nn_model.predict(scaled_inputs)
-    st.write(prediction)
+    params = {
+        'value': value,
+        'portion_size': portion_size,
+        'protein': protein,
+        'fat': fat,
+        'carb': carb,
+        'sugar': sugar,
+        'sodium': sodium,
+        'calcium': calcium,
+        'kcal': kcal,
+        'category': category,
+        'index_2019': index_2019
+    }
+    prediction = requests.get('http://localhost:8000/predict/', params=params)
+
+    st.write(prediction.json())
 
 else:
     st.write('I was not clicked 😞')
-
-# api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
-# query = food
-# response = requests.get(
-#     f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
-# )
-# image_small = response.json()['results'][0]['urls']['small']
-# st.image(
-#     image_small,
-#     caption=
-#     f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
 
 ##############################################################################
 
