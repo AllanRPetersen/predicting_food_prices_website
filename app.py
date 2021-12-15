@@ -299,7 +299,7 @@ st.image(
 st.markdown('# Our APP')
 
 st.write('''Although our model was not able to predict the price of food.
-    We were able to predict whether the food would be expensive or not.''')
+    We were able to predict whether the food would be expensive or not, so right bellow an there is a showcase of how the model can be integrated in a web application.''')
 
 st.markdown('# Food Prediction APP')
 
@@ -378,8 +378,19 @@ if st.button('Predict'):
         'index_2019': index_2019
     }
     prediction = requests.get('http://localhost:8000/predict/', params=params)
-
     st.write(prediction.json())
+
+
+
+    #print(prediction[0][0])
+    if prediction[0][0] > 0.5:
+
+        result ='Expensive'
+        result
+
+    else:
+        result ='Not Expensive'
+        result
 
 else:
     st.write('I was not clicked 😞')
@@ -388,4 +399,34 @@ else:
 
 # Section 5: Conclusions
 
+st.markdown('## Deployment')
+
+st.write('''
+    For deployment first we had to make a docker container because the model was big enough to not be able to load into heroku.
+    After that we deployed the webapp with heroku
+    ''')
+st.markdown('# Conclusions')
+
+
+
+st.write(
+    '''
+    Since we tried different aproaches, we have various conclusions:
+    '''
+)
+st.write(
+    '''
+    - Machine learning regression models did not suit properly the problem we tried to solve, at least not with the features we have at hand.
+    - Our data was better suited for classification models.
+    - Classification models such as logistic regression and support vector classification perfomed considerably better at making a prediction.
+    - Neural Networks with a binary output layer worked better at classifying than regular machine learning methods, with aproximately 12% of better precision than baseline.
+    '''
+)
+
+st.markdown('## Recommendations')
+st.write(
+    '''
+    It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable. :)
+    '''
+)
 ##############################################################################
