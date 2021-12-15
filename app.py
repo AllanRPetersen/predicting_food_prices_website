@@ -384,7 +384,17 @@ if st.button('Predict'):
     scaled_inputs = preproc.transform(inputs)
     #Prediction
     prediction = nn_model.predict(scaled_inputs)
-    st.write(prediction)
+    st.write(prediction[0][0])
+
+    #print(prediction[0][0])
+    if prediction[0][0] > 0.5:
+
+        result ='Expensive'
+        result
+
+    else:
+        result ='Not Expensive'
+        result
 
 else:
     st.write('I was not clicked 😞')
@@ -406,15 +416,13 @@ else:
 
 st.markdown('## Deployment')
 
-
-st.markdown('# Conclusions')
-
-st.write(
-    '''
+st.write('''
     For deployment first we had to make a docker container because the model was big enough to not be able to load into heroku.
     After that we deployed the webapp with heroku
-    '''
-)
+    ''')
+st.markdown('# Conclusions')
+
+
 
 st.write(
     '''
