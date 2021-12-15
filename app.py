@@ -52,7 +52,6 @@ st.write(
             using a lambda function, generating a new column named type.
     ''')
 
-
 price_df['type'] = price_df['cm_name'].apply(lambda x: x.split('-')[0])
 st.write(price_df.head(3))
 
@@ -64,8 +63,6 @@ st.write('''
             API will look for the same information repeatedly, this is particularly important because the
             USDA API has a limit of 3,600 requests per hour.
     ''')
-
-
 
 st.write('''We aim to train our with the price of food in 2020.
          Hence, the dataframe was filtered by the year 2020 using Boolean logic.'''
@@ -96,8 +93,7 @@ st.write(price_2020_df.head(3))
 
 st.markdown('## API function construction')
 
-st.write(
-    '''
+st.write('''
     In order to extract the information we wanted (nutrient values and food category) we couldn't just use the
     USDA raw API, because the response had many other parameters, so we had to built a series of functions
     that worked with the API.
@@ -111,11 +107,9 @@ st.write(
         calcium
         and cholesterol).Besides that, we also extracted the energy content in kcal, the portion size all of these nutrients were measured with,
         and the category of food it belongs according to the USDA data.
-    '''
-)
+    ''')
 
-st.write(
-    '''
+st.write('''
     There are two main functions, one that look for a food type within "foundation" foods, and the other for branded foods.
     The third funtion uses the other two and has a fail safe system in order to retrieve the most information possible,
     that's because some foods are estrictly processed foods, so they will be a branded food instead a of a fundation one.
@@ -123,8 +117,7 @@ st.write(
     Here it is an example of on of the functions and the information it retrieves:
 
 
-    '''
-)
+    ''')
 
 from utils import nutrients_redux, nutrients_redux_2, nutrients_super
 
@@ -134,13 +127,10 @@ display = nutrients_super(food)
 
 display
 
-st.write(
-    '''
+st.write('''
     This applyied to our unique values of food table retrieved us a table of type of food with all of the mentioned information.
     We had to drop the cholesterol column since it was missing more than 30% of the data
-    '''
-)
-
+    ''')
 
 st.markdown('## Currency')
 
@@ -221,36 +211,33 @@ st.write(
 )
 st.write(
     '''
+
     We tried different models: Basic linear regressor, KNN regressor, Ridge regressor and a SVR.
     We saw not so very good results with neither of them, so after trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
     Unfortunately it was below 50% of the variance explained and vary greatly after each "X" and "y" split, we suspected the data wasn't enough after all the cleaning and selection.
-    '''
-)
+    ''')
 
 st.markdown('### Second dataset')
 
-st.write(
-    '''
+st.write('''
     After the bad results we decided to repeat the whole process but this time with a New Zeland food dataset, unfortunately we got simillar results.
     So we tought the features we processed and selected weren't enough to explain the price change among the food products.
-    '''
-)
+    ''')
 
 st.markdown('### A new aproach')
 
-st.write(
-    '''
+st.write('''
     After the dissapointing results of the regression models, we decided to change the aim of the project and fit better the data we already had, so we changed our target, instead of predicting the numeric price,
     we predict if a food product would be expensive or cheap using the nutrients and the other features previously presented.
-    '''
-)
+    ''')
 
-st.write(
-    '''
+st.write('''
     We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
+
     We had more than 80% of the data variance explained, with these better results we proceed to the next step.
     '''
 )
+
 
 st.markdown('### Neural Network Model')
 
