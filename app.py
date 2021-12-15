@@ -428,7 +428,9 @@ st.write(
 st.markdown('## Recommendations')
 st.write(
     '''
-    It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable.
+    It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable. :)
     '''
 )
+
+msg = 'hello'
 ##############################################################################
