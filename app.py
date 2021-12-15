@@ -203,7 +203,15 @@ st.write('''
 
 st.markdown('## Modelling and results')
 
-st.write('''
+st.write(
+    '''
+    We built a small pipeline to preprocess the needed data. The pipeline included a Min Max scaler for numerical data and One Hot Encoder for categorical data.
+    Once fitted and transformed, the data was rady for modelling.
+    '''
+)
+st.write(
+    '''
+
     We tried different models: Basic linear regressor, KNN regressor, Ridge regressor and a SVR.
     We saw not so very good results with neither of them, so after trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
     Unfortunately it was below 50% of the variance explained and vary greatly after each "X" and "y" split, we suspected the data wasn't enough after all the cleaning and selection.
@@ -225,9 +233,38 @@ st.write('''
 
 st.write('''
     We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
-    We had more than 80% of the data variance explained
+
+    We had more than 80% of the data variance explained, with these better results we proceed to the next step.
+    '''
+)
+
+
+st.markdown('### Neural Network Model')
+
+st.write(
+    '''
+    We built a Neural Network to see if we get better results due to the variety of features we selected. For this task we used Tensorflow Keras.
+    '''
+)
+st.write('''
+    The network consisted in;\n
+        - An input dense layer of 71 dimensions with 256 neurons with a relu activation. \n
+        - A hidden dense layer of 128 neurons with a relu activation.\n
+        - A second hidden dense layer of 64 neurons and a relu activation.\n
+        - A third hidden dense layer with 32 neurons and a relu activation.\n
+        - An output dense layer with 1 neuron for the binary output, and a sigmoid activation.\n
+        - It also has a compiler with a binary crossentropy loss, adam optimizer and accuracy as its metric.
+    ''')
+from PIL import Image
+
+image = Image.open('./raw_data/Loss_and_ Accuracy.png')
+
+st.write('''
+    We obtained an average loss and accuracy of 0.255 and 0.902 respectively, which is considered a good score, more if we compared with the baseline probability of predicting correctly based only on the data distribution.\n
+    The baseline is 0.781, our model has an accuracy of 0.902.
     ''')
 
+st.image(image, caption='Graph showing the loss and accuracy of the model over170 iterations')
 ##############################################################################
 
 #Section 4:  Showcase how we would have liked the app to work
