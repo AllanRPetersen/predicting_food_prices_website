@@ -203,14 +203,11 @@ st.write('''
 
 st.markdown('## Modelling and results')
 
-st.write(
-    '''
+st.write('''
     We built a small pipeline to preprocess the needed data. The pipeline included a Min Max scaler for numerical data and One Hot Encoder for categorical data.
     Once fitted and transformed, the data was rady for modelling.
-    '''
-)
-st.write(
-    '''
+    ''')
+st.write('''
 
     We tried different models: Basic linear regressor, KNN regressor, Ridge regressor and a SVR.
     We saw not so very good results with neither of them, so after trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
@@ -235,17 +232,13 @@ st.write('''
     We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
 
     We had more than 80% of the data variance explained, with these better results we proceed to the next step.
-    '''
-)
-
+    ''')
 
 st.markdown('### Neural Network Model')
 
-st.write(
-    '''
+st.write('''
     We built a Neural Network to see if we get better results due to the variety of features we selected. For this task we used Tensorflow Keras.
-    '''
-)
+    ''')
 st.write('''
     The network consisted in;\n
         - An input dense layer of 71 dimensions with 256 neurons with a relu activation. \n
@@ -264,7 +257,9 @@ st.write('''
     The baseline is 0.781, our model has an accuracy of 0.902.
     ''')
 
-st.image(image, caption='Graph showing the loss and accuracy of the model over170 iterations')
+st.image(image,
+         caption=
+         'Graph showing the loss and accuracy of the model over170 iterations')
 ##############################################################################
 
 #Section 4:  Showcase how we would have liked the app to work
@@ -299,7 +294,8 @@ st.image(
 st.markdown('# Our APP')
 
 st.write('''Although our model was not able to predict the price of food.
-    We were able to predict whether the food would be expensive or not, so right bellow an there is a showcase of how the model can be integrated in a web application.''')
+    We were able to predict whether the food would be expensive or not, so right bellow an there is a showcase of how the model can be integrated in a web application.'''
+         )
 
 st.markdown('# Food Prediction APP')
 
@@ -378,18 +374,16 @@ if st.button('Predict'):
         'index_2019': index_2019
     }
     prediction = requests.get('http://localhost:8000/predict/', params=params)
-    st.write(prediction.json())
-
-
+    st.write('Probability: ', prediction.json())
 
     #print(prediction[0][0])
-    if prediction[0][0] > 0.5:
+    if prediction.json() > 0.5:
 
-        result ='Expensive'
+        result = 'Expensive'
         result
 
     else:
-        result ='Not Expensive'
+        result = 'Not Expensive'
         result
 
 else:
@@ -407,26 +401,18 @@ st.write('''
     ''')
 st.markdown('# Conclusions')
 
-
-
-st.write(
-    '''
+st.write('''
     Since we tried different aproaches, we have various conclusions:
-    '''
-)
-st.write(
-    '''
+    ''')
+st.write('''
     - Machine learning regression models did not suit properly the problem we tried to solve, at least not with the features we have at hand.
     - Our data was better suited for classification models.
     - Classification models such as logistic regression and support vector classification perfomed considerably better at making a prediction.
     - Neural Networks with a binary output layer worked better at classifying than regular machine learning methods, with aproximately 12% of better precision than baseline.
-    '''
-)
+    ''')
 
 st.markdown('## Recommendations')
-st.write(
-    '''
+st.write('''
     It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable. :)
-    '''
-)
+    ''')
 ##############################################################################
