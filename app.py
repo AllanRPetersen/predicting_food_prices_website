@@ -403,7 +403,18 @@ else:
 ##############################################################################
 
 # Section 5: Conclusions
+
+st.markdown('## Deployment')
+
+
 st.markdown('# Conclusions')
+
+st.write(
+    '''
+    For deployment first we had to make a docker container because the model was big enough to not be able to load into heroku.
+    After that we deployed the webapp with heroku
+    '''
+)
 
 st.write(
     '''
