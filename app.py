@@ -373,7 +373,8 @@ if st.button('Predict'):
         'category': category,
         'index_2019': index_2019
     }
-    prediction = requests.get('http://localhost:8000/predict/', params=params)
+    prediction = requests.get(
+        'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
 
     st.write('Probability: ', prediction.json())
 
