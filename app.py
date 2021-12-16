@@ -374,6 +374,7 @@ if st.button('Predict'):
         'index_2019': index_2019
     }
     prediction = requests.get('http://localhost:8000/predict/', params=params)
+
     st.write('Probability: ', prediction.json())
 
     #print(prediction[0][0])
