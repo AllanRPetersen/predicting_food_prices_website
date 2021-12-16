@@ -17,17 +17,20 @@ def app():
 
     food = st.text_input('put the food you want to calculate:')
 
-    result_1 = nutrients_super(food)
+    result_2 = nutrients_super(food)
+    dict1 = {}
+    for k,v in result_2.items():
+        dict1[k] = [v]
+    result_1 = pd.DataFrame.from_dict(dict1).replace('not found', np.nan)
 
-    #result_1.replace('not found', np.nan, inplace=True)
-
-    st.write(result_1)
+    st.write(result_2)
 
     cpi = pd.read_csv('raw_data/country_cpi.csv')
 
     country = st.selectbox("Country", cpi)
 
     if st.button('Predict'):
+        answer = cpi.loc[cpi['adm0_name'] == country]['2019'].to_list()[0]
         params = {
             'value': result_1['unit'],
             'portion_size': result_1['size'],
@@ -39,8 +42,10 @@ def app():
             'calcium': result_1['calcium'],
             'kcal': result_1['kcal'],
             'category': result_1['category'],
-            'index_2019': 10
+            'index_2019': answer
         }
+
+        st.write(answer)
 
         prediction = requests.get('https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
 
