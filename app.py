@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
+import requests
 from multipage import MultiPage
 from pages import page1,page2  # import your pages here
-=======
+
 
 
 
@@ -25,7 +25,7 @@ app.run()
 
 
 print(app)
-=======
+
 
 #@st.cache
 def get_dataframe_data():
@@ -413,4 +413,3 @@ st.write('''
     It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable. :)
     ''')
 ##############################################################################
-
