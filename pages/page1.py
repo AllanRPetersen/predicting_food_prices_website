@@ -19,9 +19,13 @@ def app():
 
     result_1 = nutrients_super(food)
 
+    #result_1.replace('not found', np.nan, inplace=True)
+
     st.write(result_1)
 
+    cpi = pd.read_csv('raw_data/country_cpi.csv')
 
+    country = st.selectbox("Country", cpi)
 
     if st.button('Predict'):
         params = {
