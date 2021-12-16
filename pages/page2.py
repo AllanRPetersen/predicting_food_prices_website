@@ -3,14 +3,13 @@ import streamlit as st
 import requests
 import pandas as pd
 import numpy as np
-from tensorflow.keras import models
-import joblib
-
+#from tensorflow.keras import models
+#import joblib
 
 
 def app():
-    nn_model = models.load_model('raw_data/neural_network_v1.h5')
-    preproc = joblib.load('raw_data/preprocessor_v1.joblib')
+    #nn_model = models.load_model('raw_data/neural_network_v1.h5')
+    #preproc = joblib.load('raw_data/preprocessor_v1.joblib')
 
     ##############################################################################
 
@@ -34,13 +33,10 @@ def app():
     )
     st.write('The raw dataset is displayed below:')
 
-
     #@st.cache
     def get_dataframe_data():
 
-        return pd.read_csv(
-            'raw_data/Global Food Prices Database/wfp_food_prices_database.csv')
-
+        return pd.read_csv('raw_data/wfp_food_prices_database.csv', nrows=100)
 
     price_df = get_dataframe_data()
 
@@ -69,7 +65,7 @@ def app():
 
     st.write('''We aim to train our with the price of food in 2020.
             Hence, the dataframe was filtered by the year 2020 using Boolean logic.'''
-            )
+             )
 
     st.write(
         '''The dataset did not have that many missing values but required extensive cleaning before it could be used for modelling.
@@ -86,9 +82,10 @@ def app():
         'adm0_id', 'adm1_id', 'mkt_id', 'cm_id', 'cur_id', 'cm_name', 'pt_id',
         'mp_commoditysource', 'um_id'
     ],
-                    inplace=True)
+                       inplace=True)
 
-    price_2020_df = price_2020_df.loc[price_2020_df['um_name'].isin(['KG', 'L'])]
+    price_2020_df = price_2020_df.loc[price_2020_df['um_name'].isin(
+        ['KG', 'L'])]
 
     st.write('We now had a dataframe that looked like this:')
 
@@ -124,7 +121,8 @@ def app():
 
     from utils import nutrients_redux, nutrients_redux_2, nutrients_super
 
-    food = st.text_input('** Put the name of the food you want to retrieve info:')
+    food = st.text_input(
+        '** Put the name of the food you want to retrieve info:')
 
     display = nutrients_super(food)
 
@@ -150,11 +148,9 @@ def app():
             SPP was later added manually. The API returned us a list of conversion rates to US dollars as a JSON.
             This allowed us to convert the prices to US dollars.''')
 
-
     def get_dataframe_data_2():
 
         return pd.read_csv('raw_data/price_with_USD.csv')
-
 
     price_with_USD = get_dataframe_data_2()
 
@@ -163,10 +159,11 @@ def app():
 
     list_of_non_food = [
         'Charcoal ', 'Corn Soy Blend (CSB++, food aid) ', 'Cotton ',
-        'Dishwashing liquid ', 'Disinfecting solution ', 'Fuel (Super Petrol) ',
-        'Fuel (diesel) ', 'Fuel (diesel, parallel market) ', 'Fuel (kerosene) ',
-        'Fuel (petrol', 'Handwash soap ', 'Laundry detergent ', 'Laundry soap ',
-        'Salt ', 'Salt (iodised) ', 'Shampoo '
+        'Dishwashing liquid ', 'Disinfecting solution ',
+        'Fuel (Super Petrol) ', 'Fuel (diesel) ',
+        'Fuel (diesel, parallel market) ', 'Fuel (kerosene) ', 'Fuel (petrol',
+        'Handwash soap ', 'Laundry detergent ', 'Laundry soap ', 'Salt ',
+        'Salt (iodised) ', 'Shampoo '
     ]
     st.write(
         '''Looking over the unique values in the column named type, we discovered
@@ -174,9 +171,10 @@ def app():
     )
     st.write(list_of_non_food)
 
-    st.write(''' We used a for-loop to remove the non-food entries from our data.
+    st.write(
+        ''' We used a for-loop to remove the non-food entries from our data.
             Afterwards the following columns were dropped: mp_year, mkt_name, adm1_name, mp_month, cur_name.'''
-            )
+    )
     st.write(
         '''The aforementioned columns do not add any information that could be used in our model to predict the food price.'''
     )
@@ -186,11 +184,9 @@ def app():
             The mean average was taken of: the original food price (mp_price), conversion rate (conv_rate) and food price in US dollars (usd_rate).
             This gave us a dataset that looked like this:''')
 
-
     def get_dataframe_data_3():
 
         return pd.read_csv('raw_data/grouped_cleaned_data.csv')
-
 
     grouped_cleaned_data = get_dataframe_data_3()
 
@@ -260,9 +256,10 @@ def app():
         The baseline is 0.781, our model has an accuracy of 0.902.
         ''')
 
-    st.image(image,
-            caption=
-            'Graph showing the loss and accuracy of the model over170 iterations')
+    st.image(
+        image,
+        caption=
+        'Graph showing the loss and accuracy of the model over170 iterations')
     ##############################################################################
 
     #Section 4:  Showcase how we would have liked the app to work
@@ -298,7 +295,7 @@ def app():
 
     st.write('''Although our model was not able to predict the price of food.
         We were able to predict whether the food would be expensive or not, so right bellow an there is a showcase of how the model can be integrated in a web application.'''
-            )
+             )
 
     st.markdown('# Food Prediction APP')
 
@@ -376,7 +373,8 @@ def app():
             'category': category,
             'index_2019': index_2019
         }
-        prediction = requests.get('https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
+        prediction = requests.get(
+            'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
 
         st.write('Probability: ', prediction.json())
 
