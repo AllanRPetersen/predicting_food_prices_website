@@ -3,11 +3,11 @@ import streamlit as st
 import requests
 import pandas as pd
 import numpy as np
-from tensorflow.keras import models
-import joblib
+#from tensorflow.keras import models
+#import joblib
 
-nn_model = models.load_model('raw_data/neural_network_v1.h5')
-preproc = joblib.load('raw_data/preprocessor_v1.joblib')
+#nn_model = models.load_model('raw_data/neural_network_v1.h5')
+#preproc = joblib.load('raw_data/preprocessor_v1.joblib')
 
 ##############################################################################
 
