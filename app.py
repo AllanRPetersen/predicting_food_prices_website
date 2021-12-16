@@ -1,36 +1,31 @@
-from pandas.core.frame import DataFrame
 import streamlit as st
-import requests
 import pandas as pd
 import numpy as np
-#from tensorflow.keras import models
-#import joblib
 
-#nn_model = models.load_model('raw_data/neural_network_v1.h5')
-#preproc = joblib.load('raw_data/preprocessor_v1.joblib')
+from multipage import MultiPage
+from pages import page1,page2  # import your pages here
+=======
 
-##############################################################################
 
-# Section 1:  Explaining the hypothesis of the project
 
-#Hypothesis:
-st.markdown('# Project Aim')
-st.write(
-    '''The aim of this project is to predict the price of food based on their nutrients.
-    Our hypothesis was that food containing more nutrients would be more desirable,
-    leading to increased demand and as a result being more expensive.
-    In contrast foods having few nutrients would have a lower price.''')
+#blabla
+# Create an instance of the app
+app = MultiPage()
 
-##############################################################################
+# Title of the main page
+st.title("Global Food Price Predictor")
 
-# Section 2:  Explaining the data of the project
-st.markdown('# Data')
-st.write(
-    '''Price of the foods were found as a dataset called Global Food Prices Database on Kaggle.
-This dataset contained over 1 million rows of food prices from different markets around the world.'''
-)
-st.write('The raw dataset is displayed below:')
+# Add all your applications (pages) here
+app.add_page("Showcasing", page1.app)
+app.add_page("Description", page2.app)
 
+
+# The main app
+app.run()
+
+
+print(app)
+=======
 
 #@st.cache
 def get_dataframe_data():
@@ -418,3 +413,4 @@ st.write('''
     It is recommended to try the regression models with more data at a local or regional scale for price prediction in order to find out if that aim is achievable. :)
     ''')
 ##############################################################################
+
