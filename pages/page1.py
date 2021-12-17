@@ -12,8 +12,6 @@ from utils import nutrients_super, nutrients_redux, nutrients_redux_2
 def app():
     st.markdown('## Predict whether the food will be expensive or not')
 
-    food = st.text_input('Enter the food you want to calculate:', 'Tacos')
-
     st.write('''
         This webapp evaluates if a given food is, or will be expensive or not based on it's nutrient information, type of food and country.
         The expensive or not expensive result represent a classification based on whether the cost of the food will be bellow or above 1 USD per kilogram.
@@ -33,7 +31,7 @@ def app():
             The CPI index is extracted for your selected country.
             ''')
 
-        food = st.text_input('put the food you want to calculate:', 'taco')
+        food = st.text_input('Enter the food you want to calculate:', 'taco')
 
         result_2 = nutrients_super(food)
         dict1 = {}
@@ -58,7 +56,7 @@ def app():
 
         cpi = pd.read_csv('raw_data/country_cpi.csv')
 
-        country = st.selectbox("Country", cpi)
+        country = st.selectbox("Country:", cpi)
 
         if st.button('Predict'):
             answer = cpi.loc[cpi['adm0_name'] == country]['2019'].to_list()[0]
@@ -138,37 +136,36 @@ def app():
 
         index_2019 = st.text_input('CPI index 2019:', '10')
 
-    country = st.selectbox("Country:", cpi)
+        if st.button('Predict'):
+            params = {
+                'value': value,
+                'portion_size': portion_size,
+                'protein': protein,
+                'fat': fat,
+                'carb': carb,
+                'sugar': sugar,
+                'sodium': sodium,
+                'calcium': calcium,
+                'kcal': kcal,
+                'category': category,
+                'index_2019': index_2019
+            }
+            prediction = requests.get(
+                'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/',
+                params=params)
 
-    if st.button('Predict'):
-        params = {
-            'value': value,
-            'portion_size': portion_size,
-            'protein': protein,
-            'fat': fat,
-            'carb': carb,
-            'sugar': sugar,
-            'sodium': sodium,
-            'calcium': calcium,
-            'kcal': kcal,
-            'category': category,
-            'index_2019': index_2019
-        }
-        prediction = requests.get(
-            'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
+            st.write('Probability: ', prediction.json())
 
-        st.write('Probability: ', prediction.json())
+            #print(prediction[0][0])
+            if prediction.json() > 0.5:
 
-        #print(prediction[0][0])
-        if prediction.json() > 0.5:
+                result = 'Expensive'
+                st.markdown(f'### **{result}**')
 
-            result = 'Expensive'
-            st.markdown(f'### **{result}**')
+            else:
+                result = 'Not Expensive'
+                st.markdown(f'### **{result}**')
 
         else:
-            result = 'Not Expensive'
-            st.markdown(f'### **{result}**')
-
-    else:
-        st.write('I was not clicked 😞')
+            st.write('I was not clicked 😞')
     return 'hi 2'
