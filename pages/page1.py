@@ -12,39 +12,32 @@ from utils import nutrients_super, nutrients_redux, nutrients_redux_2
 def app():
     st.markdown('## Predict whether the food will be expensive or not')
 
-    st.write(
-        '''
+    st.write('''
         This webapp evaluates if a given food is, or will be expensive or not based on it's nutrient information, type of food and country.
         The expensive or not expensive result represent a classification based on whether the cost of the food will be bellow or above 1 USD per kilogram.
         The model has been trained on  2020 prices from 71 countries around the world.
-        '''
-    )
-    st.write(
-        '''
+        ''')
+    st.write('''
         Once all the information is collected, we call our own API that uses cloud processing to perform the prediction.
-        '''
-    )
+        ''')
     ##################################################################
     'Radio function'
 
     display = st.radio('Select input mode', ('Automated', 'Manual'))
 
     if display == 'Automated':
-        st.write(
-            '''
+        st.write('''
             Automated mode uses a series of functions to look for information of the food into the USDA database and automatically retrieves it's nutrients, enery content and category.
             The CPI index is extracted for your selected country.
-            '''
-        )
+            ''')
 
-        food = st.text_input('put the food you want to calculate:','taco')
+        food = st.text_input('Enter the food you want to calculate:', 'taco')
 
         result_2 = nutrients_super(food)
         dict1 = {}
-        for k,v in result_2.items():
+        for k, v in result_2.items():
             dict1[k] = [v]
         result_1 = pd.DataFrame.from_dict(dict1).replace('not found', np.nan)
-
 
         ####################### image #########################
         api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
@@ -63,7 +56,7 @@ def app():
 
         cpi = pd.read_csv('raw_data/country_cpi.csv')
 
-        country = st.selectbox("Country", cpi)
+        country = st.selectbox("Country:", cpi)
 
         if st.button('Predict'):
             answer = cpi.loc[cpi['adm0_name'] == country]['2019'].to_list()[0]
@@ -83,7 +76,9 @@ def app():
 
             #st.write(answer)
 
-            prediction = requests.get('https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
+            prediction = requests.get(
+                'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/',
+                params=params)
 
             st.write('Probability: ', prediction.json())
 
@@ -100,12 +95,10 @@ def app():
             st.write('I was not clicked 😞')
     if display == 'Manual':
 
-        st.write(
-            '''
+        st.write('''
             Manual mode skips the USDA API funtionality in order to make the calculations with your prefered values.
             Recommended in case you want to look for a strange or not registered food.
-            '''
-        )
+            ''')
         options = ("Retail", "Wholesale")
 
         value = st.selectbox("Retail or Wholesale", options)
@@ -119,7 +112,6 @@ def app():
         fat = st.text_input('Fat content:', '3')
         st.write('  ')
 
-
         carb = st.text_input('Carbohydrate content:', '4')
         st.write('  ')
 
@@ -132,21 +124,17 @@ def app():
         calcium = st.text_input('Calcium content:', '7')
         st.write('  ')
 
-
         kcal = st.text_input('Amount of calories (kcal):', '8')
         st.write('  ')
-
 
         food_cat = pd.read_csv('production_data/food_categories.csv')
         #st.write(food_cat.head())
 
         cpi = pd.read_csv('production_data/country_cpi.csv')
 
-
         category = st.selectbox("Food Category", food_cat)
 
         index_2019 = st.text_input('CPI index 2019:', '10')
-
 
         if st.button('Predict'):
             params = {
@@ -163,10 +151,10 @@ def app():
                 'index_2019': index_2019
             }
             prediction = requests.get(
-                'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
+                'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/',
+                params=params)
 
             st.write('Probability: ', prediction.json())
-
 
             #print(prediction[0][0])
             if prediction.json() > 0.5:
