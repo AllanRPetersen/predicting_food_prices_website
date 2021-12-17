@@ -5,9 +5,8 @@ import pandas as pd
 import numpy as np
 #from tensorflow.keras import models
 import joblib
-from utils import nutrients_super, nutrients_redux,nutrients_redux_2
+from utils import nutrients_super, nutrients_redux, nutrients_redux_2
 ###############################################################
-
 
 
 def app():
@@ -106,6 +105,7 @@ def app():
         fat = st.text_input('Fat content:', '3')
         st.write('  ')
 
+
         carb = st.text_input('Carbohydrate content:', '4')
         st.write('  ')
 
@@ -118,15 +118,33 @@ def app():
         calcium = st.text_input('Calcium content:', '7')
         st.write('  ')
 
+
         kcal = st.text_input('Amount of calories (kcal):', '8')
         st.write('  ')
 
-        food_cat = pd.read_csv('raw_data/food_categories.csv')
+
+        food_cat = pd.read_csv('production_data/food_categories.csv')
         #st.write(food_cat.head())
+
+        api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
+        query = food
+        response = requests.get(
+            f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
+        )
+        image_small = response.json()['results'][0]['urls']['small']
+        st.image(
+            image_small,
+            caption=
+            f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
+        )
+
+        cpi = pd.read_csv('production_data/country_cpi.csv')
+
 
         category = st.selectbox("Food Category", food_cat)
 
         index_2019 = st.text_input('CPI index 2019:', '10')
+
 
         if st.button('Predict'):
             params = {
@@ -146,6 +164,7 @@ def app():
                 'https://nnmodel-ynawzkr5xa-ew.a.run.app/predict/', params=params)
 
             st.write('Probability: ', prediction.json())
+
 
             #print(prediction[0][0])
             if prediction.json() > 0.5:

@@ -1,0 +1,407 @@
+food_type,protein,fat,carb,sugar,sodium,cholesterol,calcium,kcal
+Bread ,9.43,3.59,49.2,5.34,477,not found,211,1130.0
+Oil (cooking) ,1.26,3.24,30.9,not found,116,0.0,3.0,144
+Pulses ,17.9,7.14,60.7,not found,393,0.0,107,393
+Rice (high quality) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Rice (low quality) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Sugar ,0.0,0.32,99.6,99.8,1.0,not found,1.0,385
+Wheat ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Wheat flour (high quality) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Wheat flour (low quality) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Oil (palm) ,0.0,100,0.0,not found,0.0,0.0,0.0,3700.0
+Oil (soybean) ,not found,not found,not found,not found,not found,not found,not found,not found
+Meat (beef) ,11.7,28.0,2.89,1.26,872,not found,15.0,1310.0
+Milk ,7.81,11.0,6.86,not found,105,48.0,224,157
+Potatoes ,2.7,0.0,16.9,not found,0.0,0.0,0.0,74.0
+Rice (white) ,6.94,1.3,79.8,not found,5.0,not found,6.0,359
+Wheat flour ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Apples (red) ,0.188,0.212,14.8,12.2,0.0,not found,4.66,not found
+Beans ,4.58,2.67,16.8,not found,336,0.0,0.0,107
+Beetroots ,10.7,25.0,57.1,not found,511,0.0,143,479
+Bread (first grade flour) ,14.3,1.65,72.8,not found,3.0,not found,19.0,1520.0
+Bread (high grade flour) ,14.3,1.65,72.8,not found,3.0,not found,19.0,1520.0
+Buckwheat ,13.2,3.4,71.5,not found,1.0,0.0,18.0,343
+Cabbage ,1.1,0.5,2.4,not found,498,0.0,33.0,65.0
+Carrots ,0.81,0.47,7.92,4.2,66.0,not found,33.0,153
+Cheese (dry) ,24.5,24.3,2.07,0.43,1810.0,78.0,661,326
+Cucumbers (greenhouse) ,0.48,0.43,1.99,1.28,808,not found,54.0,12.0
+Fish (fresh) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Lentils ,4.07,0.0,11.4,not found,233,0.0,16.0,65.0
+Meat (chicken) ,23.9,5.95,0.0,not found,117,127,12.0,156
+Meat (pork) ,7.38,9.04,15.8,0.46,473,20.0,75.0,174
+Oil (vegetable) ,0.0,100,0.0,not found,0.0,0.0,0.0,886
+Onions ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Pasta ,1.41,1.48,8.05,5.5,419,not found,27.0,186
+"Peas (split, dry) ",3.2,1.09,9.88,not found,336,0.0,12.0,61.0
+Tomatoes ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Tomatoes (paste) ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Lentils (masur) ,3.67,5.61,12.3,not found,383,0.0,25.0,110
+Rice (coarse) ,11.7,1.6,73.8,not found,0.0,not found,17.2,not found
+"Rice (coarse, BR",not found,not found,not found,not found,not found,not found,not found,not found
+Rice (medium grain) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Chickpeas ,4.62,1.54,15.4,not found,246,0.0,31.0,92.0
+Ghee (vanaspati) ,0.28,99.5,0.0,not found,2.0,256,4.0,876
+Lentils (moong) ,3.67,5.61,12.3,not found,383,0.0,25.0,110
+Lentils (urad) ,3.67,5.61,12.3,not found,383,0.0,25.0,110
+Milk (pasteurized) ,10.1,0.16,0.74,not found,144,3.0,9.0,201
+Oil (groundnut) ,not found,not found,not found,not found,not found,not found,not found,not found
+Oil (mustard) ,4.25,3.38,5.3,1.42,1100.0,not found,63.0,61.0
+Oil (sunflower) ,not found,not found,not found,not found,not found,not found,not found,not found
+Rice ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Sugar (jaggery/gur) ,not found,not found,not found,not found,not found,not found,not found,not found
+Tea (black) ,0.0,0.0,0.3,not found,3.0,0.0,0.0,1.0
+Beans (black) ,10.6,6.81,19.1,not found,275,11.0,24.0,177
+Beans (red) ,21.3,1.16,not found,not found,not found,not found,148,not found
+Beans (white) ,6.5,4.21,25.2,not found,231,0.0,54.0,164
+Cassava (cossette) ,1.42,3.02,39.6,not found,146,2.0,17.0,191
+Cassava (fresh) ,1.42,3.02,39.6,not found,146,2.0,17.0,191
+Cassava flour ,11.4,1.52,74.4,not found,0.0,not found,18.7,not found
+Cassava meal (gari) ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+"Cassava meal (gari, fine) ",6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Cassava meal (tapioca) ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Coconut (dried) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+"Fish (fresh, silvi) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (tilapia) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Groundnuts (Bambara) ,not found,not found,not found,not found,not found,not found,not found,not found
+"Groundnuts (small, unshelled) ",23.5,1.28,not found,not found,not found,not found,149,not found
+Leafy vegetables ,1.04,0.39,4.11,1.29,282,not found,36.0,86.0
+Lemons ,0.88,0.0,9.73,not found,0.0,not found,26.0,31.0
+Maize ,8.75,5.09,73.9,not found,5.0,not found,5.0,364
+Maize (white) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Millet ,10.8,4.25,75.1,not found,4.0,not found,14.0,1600.0
+Oil (palm nut) ,0.0,100,0.0,not found,0.0,0.0,0.0,3700.0
+Okra (fresh) ,2.02,2.92,7.76,not found,139,2.0,86.0,59.0
+Oranges ,0.91,0.15,11.8,8.57,9.0,not found,43.0,196
+Papaya ,2.5,0.0,65.0,not found,18.0,0.0,150,250
+"Peas (green, dry) ",5.42,0.4,14.4,not found,5.0,0.0,25.0,81.0
+"Peppers (red, dry) ",1.01,2.94,6.09,not found,131,2.0,8.0,50.0
+Plantains ,2.28,29.6,63.8,not found,202,0.0,9.0,531
+Rice (imported) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Rice (local) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Rice (paddy) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Shrimps ,15.4,1.48,10.8,not found,509,138,69.0,122
+Snail ,16.1,1.4,2.0,not found,70.0,50.0,10.0,90.0
+Sorghum ,10.6,3.46,72.1,not found,2.0,0.0,13.0,329
+Sorghum (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Soybeans ,not found,not found,not found,not found,not found,not found,not found,not found
+Sweet potatoes ,8.88,13.6,25.5,10.3,304,24.0,46.0,260
+Taro ,2.3,24.9,68.1,not found,342,0.0,60.0,498
+Wheat flour (imported) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Yam ,1.33,0.0,28.0,not found,9.0,0.0,20.0,118
+Yam (dry) ,1.53,0.17,27.9,not found,9.0,0.0,17.0,494
+Yam (flour) ,11.4,1.52,74.4,not found,0.0,not found,18.7,not found
+Yam (white) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Yam (yellow) ,4.25,3.38,5.3,1.42,1100.0,not found,63.0,61.0
+Bread (wheat) ,12.3,3.55,43.1,4.41,450,not found,163,1060.0
+"Meat (beef, chops with bones) ",27.3,11.4,0.0,not found,67.0,80.0,19.0,219
+"Meat (chicken, whole) ",23.9,5.95,0.0,not found,117,127,12.0,156
+Milk (non,not found,not found,not found,not found,not found,not found,not found,not found
+Noodles (short) ,22.7,5.32,0.0,not found,43.0,57.0,19.0,606
+"Potatoes (Irish, imilla) ",0.27,2.41,2.03,not found,3.0,7.0,6.0,88.0
+Rice (Grano de Oro) ,4.21,1.7,40.8,not found,4.0,0.0,21.0,836
+Rice (carolina 2da) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (carolina, 1st) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Rice (estaquilla) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Rice (long grain) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Beans (niebe) ,5.44,3.7,15.9,not found,443,0.0,26.0,119
+Groundnuts (shelled) ,6.5,28.6,56.2,not found,467,0.0,21.0,508
+Groundnuts (unshelled) ,18.3,28.3,26.7,not found,175,0.0,0.0,0.0
+Sorghum (white) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Avocados ,3.33,15.0,10.0,not found,0.0,0.0,0.0,167
+Bananas ,0.73,0.22,20.1,15.8,not found,not found,not found,357
+"Fish (lates,dry,imported) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Fish (lates,dry,local) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Maize flour ,11.4,1.52,74.4,not found,0.0,not found,18.7,not found
+Meat (goat) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+Potatoes (Irish) ,0.27,2.41,2.03,not found,3.0,7.0,6.0,88.0
+"Rice (high quality, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (low quality, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Beans (yardlong, green) ",1.04,0.39,4.11,1.29,282,not found,36.0,86.0
+"Cabbage (chinese, flowering) ",8.88,13.6,25.5,10.3,304,24.0,46.0,260
+Eggplants ,4.25,13.2,9.63,not found,219,0.0,97.0,162
+Fish (catfish) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (snake head) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Fish (snake head, dry) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (striped catfish) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Meat (pork, with fat) ",16.7,3.73,0.27,not found,1040.0,not found,5.0,106
+Prawn ,13.6,0.0,0.91,not found,173,127,55.0,73.0
+"Rice (mixed, low quality) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Snake gourd ,1.2,0.2,4.35,not found,3.0,0.0,20.0,84.0
+Water spinach ,2.85,0.619,2.41,not found,111,not found,68.4,not found
+Wax gourd ,1.2,0.2,4.35,not found,3.0,0.0,20.0,84.0
+Cassava ,3.88,0.97,33.0,not found,53.0,0.0,19.0,146
+Maize (local) ,8.75,5.09,73.9,not found,5.0,not found,5.0,364
+Maize (yellow) ,4.25,3.38,5.3,1.42,1100.0,not found,63.0,61.0
+Fish (frozen) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Meat (chicken, frozen) ",23.9,5.95,0.0,not found,117,127,12.0,156
+"Oil (vegetable, imported) ",0.0,100,0.0,not found,0.0,0.0,0.0,886
+"Rice (broken, imported) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Sesame ,3.1,45.2,8.6,not found,1000.0,0.0,19.0,443
+Squashes ,4.0,8.01,26.6,not found,166,38.0,65.0,191
+Sugar (white) ,0.0,0.32,99.6,99.8,1.0,not found,1.0,385
+Peanut ,7.14,21.4,64.3,not found,304,18.0,not found,464
+Sorghum (berbere) ,10.6,3.46,72.1,not found,2.0,0.0,13.0,329
+Barley ,0.0,0.0,0.0,not found,0.0,0.0,0.0,0.0
+"Beans (black, imported) ",10.6,6.81,19.1,not found,275,11.0,24.0,177
+Beans (cranberry) ,24.4,1.23,not found,not found,not found,not found,152,not found
+"Beans (green, fresh) ",1.04,0.39,4.11,1.29,282,not found,36.0,86.0
+"Beans (red, fresh) ",1.84,3.25,7.03,not found,123,0.0,37.0,58.0
+Beans (string) ,1.45,2.7,6.25,not found,131,2.0,48.0,50.0
+Blackberry ,0.58,0.29,4.96,not found,0.0,0.0,2.0,25.0
+Broccoli ,2.57,0.34,6.27,1.4,36.0,not found,46.0,31.0
+Cassava (dry) ,1.42,3.02,39.6,not found,146,2.0,17.0,191
+Cheese ,23.3,34.0,2.44,0.33,654,100,707,1710.0
+Cheese (local) ,23.3,34.0,2.44,0.33,654,100,707,1710.0
+Coffee ,0.0,0.0,0.32,not found,0.0,0.0,not found,1.0
+"Fish (sardine, canned) ",19.0,0.94,0.08,0.0,219,36.0,18.0,376
+"Fish (tuna, canned) ",19.0,0.94,0.08,0.0,219,36.0,18.0,376
+Garlic ,0.0,0.0,33.3,not found,0.0,not found,667,167
+Guava ,0.6,0.2,11.2,not found,10.0,0.0,20.0,49.0
+Lentils (imported) ,3.67,5.61,12.3,not found,383,0.0,25.0,110
+Mangoes ,0.71,0.0,17.1,not found,0.0,0.0,14.0,71.0
+"Meat (chicken, whole, frozen) ",12.3,10.3,0.91,not found,121,420,55.0,150
+Milk (powder) ,7.81,11.0,6.86,not found,105,48.0,224,157
+Onions (local) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Onions (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Onions (white) ,0.89,0.13,7.68,5.76,2.0,not found,21.0,148
+Oranges (big size) ,0.91,0.15,11.8,8.57,9.0,not found,43.0,196
+Passion fruit ,0.0859,0.286,11.4,10.3,4.87,not found,7.1,not found
+Peas (fresh) ,5.46,3.43,14.6,not found,122,0.0,25.0,108
+Peppers (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Potatoes (black) ,0.04,0.14,21.2,not found,4.0,0.0,0.0,279
+Pumpkin ,1.67,0.0,9.17,not found,8.0,0.0,33.0,42.0
+"Rice (ordinary, first quality) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (ordinary, second quality) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Spinach ,2.85,0.619,2.41,not found,111,not found,68.4,not found
+Sugar (brown) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Sugar (brown, loaf) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Tomatoes (dried) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Tomatoes (local) ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Wheat flour (local) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Fish (salted) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (smoked) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Groundnuts (paste) ,9.0,27.7,47.8,not found,9.0,0.0,172,458
+Cassava meal (attieke) ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Cocoa ,20.0,20.0,10.0,not found,0.0,0.0,not found,300
+Cornstarch ,0.26,0.05,91.3,not found,9.0,0.0,2.0,381
+Fish (appolo) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (dry) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Rice (denikassia, imported) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Yam (florido) ,1.53,0.17,27.9,not found,9.0,0.0,17.0,494
+Maize meal ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Maize meal (imported) ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+"Meat (goat, with bones) ",27.3,11.4,0.0,not found,67.0,80.0,19.0,219
+Apples ,0.148,0.162,15.7,13.3,1.01,not found,5.98,not found
+Beans (dry) ,24.4,1.45,not found,not found,not found,not found,191,not found
+Beans (pod) ,7.92,0.73,17.6,not found,25.0,0.0,37.0,368
+Cucumbers ,0.48,0.43,1.99,1.28,808,not found,54.0,12.0
+Grapes (black) ,0.83,0.63,5.51,not found,6.0,not found,11.0,113
+Grapes (pink) ,8.42,6.96,25.9,not found,218,0.0,49.0,196
+Lettuce ,1.24,0.26,3.24,1.19,not found,not found,35.0,70.0
+"Maize (white, dry) ",24.5,24.3,2.07,0.43,1810.0,78.0,661,326
+Melons (cantaloupe) ,0.82,0.18,8.16,7.88,30.0,not found,9.0,141
+Naranjilla (hybrid) ,0.44,0.22,5.9,not found,4.0,not found,8.0,103
+Oat flakes ,10.0,3.0,78.0,not found,380,0.0,80.0,380
+"Oil (vegetable, local) ",0.0,100,0.0,not found,0.0,0.0,0.0,886
+"Onions (red, dry) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Onions (white, dry) ",0.89,0.13,7.68,5.76,2.0,not found,21.0,148
+Peppers (fresh) ,3.15,0.64,2.65,not found,4.0,0.0,177,94.0
+Pineapples ,0.0,0.0,87.5,not found,50.0,0.0,50.0,350
+"Plantains (barraganete, green) ",1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+"Plantains (barraganete, mature) ",2.91,0.604,2.64,not found,107,not found,66.6,not found
+"Plantains (dominico, green) ",1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+"Plantains (dominico, mature) ",2.91,0.604,2.64,not found,107,not found,66.6,not found
+Potatoes (super chola) ,0.97,6.87,5.61,not found,735,0.0,94.0,81.0
+Potatoes (unica) ,3.89,11.2,13.4,not found,221,68.0,34.0,170
+"Rice (short grain, low quality, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Strawberries ,0.64,0.22,7.63,5.34,10.0,not found,12.0,132
+Tomatoes (greenhouse) ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Tree tomatoes ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Watermelons ,0.61,0.15,7.55,not found,1.0,0.0,7.0,127
+"Beans (fava, dry) ",7.06,6.88,18.3,not found,220,0.0,34.0,160
+Ghee (natural) ,0.28,99.5,0.0,not found,2.0,256,4.0,876
+"Meat (beef, without bones) ",3.84,3.19,32.5,0.62,361,not found,11.0,729
+Oil (maize) ,8.75,5.09,73.9,not found,5.0,not found,5.0,364
+Oil (mixed) ,2.05,3.54,8.58,not found,243,0.0,21.0,70.0
+Butter (cow milk) ,not found,82.2,not found,0.58,524,235,21.0,not found
+Butter (goat milk) ,not found,82.2,not found,0.58,524,235,21.0,not found
+Honey ,0.3,0.0,82.4,not found,4.0,0.0,6.0,1270.0
+Kale ,2.92,1.49,4.42,0.8,53.0,not found,254,35.0
+Kocho ,not found,not found,not found,not found,not found,not found,not found,not found
+Milk (camel) ,7.81,11.0,6.86,not found,105,48.0,224,157
+Pasta (macaroni) ,1.41,1.48,8.05,5.5,419,not found,27.0,186
+Peppers (green) ,1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+Teff (Sergegna) ,3.87,0.65,19.9,not found,8.0,0.0,49.0,101
+Wheat (food aid) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Wheat (white) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Butter ,not found,82.2,not found,0.58,524,235,21.0,not found
+Cassava leaves ,1.42,3.02,39.6,not found,146,2.0,17.0,191
+Dates ,2.5,0.0,75.0,not found,25.0,0.0,0.0,300
+Fish (bonga) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fonio ,6.67,1.11,77.8,not found,622,0.0,38.0,356
+Meat (mutton) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+Meat (sheep) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+"Rice (basmati, broken) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (long grain, imported) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (medium grain, imported) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (paddy, long grain, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (small grain, imported) ",2.38,0.21,28.6,not found,0.0,0.0,3.0,130
+Cowpeas ,4.1,0.25,4.82,not found,7.0,0.0,63.0,29.0
+"Fish (mackerel, fresh) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Gari ,1.79,1.79,78.6,not found,41.0,0.0,0.0,339
+Peppers (dried) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Plantains (apem) ,2.28,29.6,63.8,not found,202,0.0,9.0,531
+Plantains (apentu) ,2.28,29.6,63.8,not found,202,0.0,9.0,531
+Tomatoes (navrongo) ,0.696,0.425,3.84,not found,0.0,not found,9.96,not found
+Yam (puna) ,1.53,0.17,27.9,not found,9.0,0.0,17.0,494
+"Beans (niebe, white) ",6.5,4.21,25.2,not found,231,0.0,54.0,164
+"Chili (red, dry raw) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Fish ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Onions (imported) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Bananas (imported) ,0.73,0.22,20.1,15.8,not found,not found,not found,357
+Bananas (local) ,0.73,0.22,20.1,15.8,not found,not found,not found,357
+Cashew ,6.98,20.9,67.4,not found,349,23.0,0.0,488
+"Fish (barbel, sole) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (goldstripe sardinella) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Fish (mullet, catfish) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Meat (beef, second quality) ",11.7,28.0,2.89,1.26,872,not found,15.0,1310.0
+"Meat (chicken, frozen, imported) ",23.9,5.95,0.0,not found,117,127,12.0,156
+Chili (bird's eye) ,23.4,2.48,0.0,not found,50.0,62.0,13.0,122
+"Chili (bird's eye, green) ",1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+"Chili (bird's eye, red) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Chili (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Chili (red, curly) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Chili (red, large) ",1.87,0.44,8.81,not found,9.0,0.0,14.0,166
+Eggs ,12.7,9.52,0.0,not found,143,373,63.0,143
+Eggs (broiler) ,23.9,5.95,0.0,not found,117,127,12.0,156
+Garlic (medium) ,10.9,1.52,75.4,not found,2.0,0.0,24.0,349
+"Meat (beef, first quality) ",11.7,28.0,2.89,1.26,872,not found,15.0,1310.0
+"Meat (chicken, broiler) ",23.9,5.95,0.0,not found,117,127,12.0,156
+"Oil (vegetable, bulk) ",0.0,100,0.0,not found,0.0,0.0,0.0,886
+"Oil (vegetable, packaged) ",16.7,3.73,0.27,not found,1040.0,not found,5.0,106
+Onions (shallot) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Onions (shallot, medium) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Rice (medium quality) ,2.38,0.21,28.6,not found,0.0,0.0,3.0,130
+Sugar (local) ,0.0,0.32,99.6,99.8,1.0,not found,1.0,385
+Sugar (premium) ,0.0,0.32,99.6,99.8,1.0,not found,1.0,385
+Bulgur ,12.5,2.27,67.0,not found,11.0,0.0,45.0,341
+Meat (lamb) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+Tea ,0.0,0.0,8.46,not found,2.0,not found,not found,34.0
+Radish ,0.68,0.1,3.4,not found,39.0,0.0,25.0,16.0
+"Rice (glutinous, unmilled) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Bread (pita) ,9.43,3.59,49.2,5.34,477,not found,211,1130.0
+"Cheese (white, boiled) ",24.5,24.3,2.07,0.43,1810.0,78.0,661,326
+Oil (olive) ,0.0,100,0.0,not found,2.0,0.0,1.0,884
+Wheat flour (first grade) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Apples (dried) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Buckwheat grits ,13.2,3.4,71.5,not found,1.0,0.0,18.0,343
+Cheese (fat) ,38.6,20.7,27.9,not found,2.0,not found,258,1890.0
+Cheese (low,not found,not found,not found,not found,not found,not found,not found,not found
+Kefir ,3.33,3.33,3.75,not found,38.0,12.0,125,58.0
+Peas ,5.56,0.0,14.4,not found,0.0,0.0,22.0,78.0
+Semolina ,13.3,1.84,72.0,not found,0.426,not found,19.8,not found
+Walnuts ,14.3,60.7,17.9,not found,18.0,0.0,71.0,643
+"Fish (tilapia, farmed) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Garlic (small) ,23.5,1.28,not found,not found,not found,not found,149,not found
+"Meat (buffalo, first quality) ",3.84,3.19,32.5,0.62,361,not found,11.0,729
+"Meat (buffalo, second quality) ",3.84,3.19,32.5,0.62,361,not found,11.0,729
+"Meat (pork, first quality) ",7.38,9.04,15.8,0.46,473,20.0,75.0,174
+"Meat (pork, second quality) ",7.38,9.04,15.8,0.46,473,20.0,75.0,174
+"Rice (glutinous, first quality) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (glutinous, second quality) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (ordinary, unmilled) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Bulgur (brown) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Lentils (green) ,1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+Lentils (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Pasta (spaghetti) ,1.41,1.48,8.05,5.5,419,not found,27.0,186
+"Rice (imported, Egyptian) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Chili (green) ,1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+Couscous ,13.3,0.0,77.8,not found,0.0,0.0,33.0,378
+Water (drinking) ,19.0,0.94,0.08,0.0,219,36.0,18.0,376
+Meat (camel) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+Sorghum (r'haya) ,10.6,3.46,72.1,not found,2.0,0.0,13.0,329
+Sorghum (taghalit) ,10.6,3.46,72.1,not found,2.0,0.0,13.0,329
+Wheat meal ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+"Beans (black, Nayarit) ",10.6,6.81,19.1,not found,275,11.0,24.0,177
+"Beans (black, Veracruz) ",10.6,6.81,19.1,not found,275,11.0,24.0,177
+"Beans (black, Zacatecas) ",10.6,6.81,19.1,not found,275,11.0,24.0,177
+"Rice (long grain, Sinaloa) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (small grain, Morelos) ",2.38,0.21,28.6,not found,0.0,0.0,3.0,130
+Tortilla ,5.26,2.63,44.7,not found,39.0,0.0,211,211
+Beans (butter) ,not found,82.2,not found,0.58,524,235,21.0,not found
+Beans (catarino) ,5.44,3.7,15.9,not found,443,0.0,26.0,119
+Beans (magnum) ,5.44,3.7,15.9,not found,443,0.0,26.0,119
+"Groundnuts (large, shelled) ",6.5,28.6,56.2,not found,467,0.0,21.0,508
+"Groundnuts (small, shelled) ",6.5,28.6,56.2,not found,467,0.0,21.0,508
+"Maize meal (white, first grade) ",10.7,0.0,2.36,not found,not found,not found,not found,55.0
+"Maize meal (white, with bran) ",6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+"Maize meal (white, without bran) ",3.84,3.19,32.5,0.62,361,not found,11.0,729
+"Sugar (brown, imported) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Sugar (brown, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Chickpeas (local) ,8.23,8.91,25.5,not found,222,0.0,46.0,210
+"Oil (mixed, imported) ",2.05,3.54,8.58,not found,243,0.0,21.0,70.0
+Rice (Emata) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Lentils (broken) ,3.67,5.61,12.3,not found,383,0.0,25.0,110
+Potatoes (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Cassava meal (gari, yellow) ",6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Cowpeas (brown) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Cowpeas (white) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Gari (white) ,79.9,0.65,6.02,not found,1250.0,17.0,104,376
+Sorghum (brown) ,7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Yam (Abuja) ,1.53,0.17,27.9,not found,9.0,0.0,17.0,494
+Beans(mash) ,2.15,4.06,17.6,not found,212,10.0,25.0,113
+Ghee (artificial) ,0.28,99.5,0.0,not found,2.0,256,4.0,876
+Poultry ,32.1,3.24,0.0,not found,47.0,116,6.0,695
+"Rice (milled, superior) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+"Rice (regular, milled) ",1.04,0.39,4.11,1.29,282,not found,36.0,86.0
+Wheat flour (locally processed) ,15.1,2.73,71.2,not found,3.0,not found,38.0,1550.0
+Maize flour (white) ,6.94,1.3,79.8,not found,5.0,not found,6.0,359
+Maize flour (yellow) ,6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+Maize flour (imported) ,11.4,1.52,74.4,not found,0.0,not found,18.7,not found
+Oil ,0.0,93.3,0.0,not found,833,0.0,not found,867
+"Rice (long grain, high quality, local) ",7.19,3.85,75.5,not found,1.0,not found,10.0,365
+Maize (imported) ,8.75,5.09,73.9,not found,5.0,not found,5.0,364
+Fish (herring) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Pigeon peas ,8.0,not found,16.0,not found,28.0,1.0,60.0,110
+Potato Leaves ,2.49,0.51,8.82,not found,6.0,0.0,78.0,42.0
+"Milk (cow, fresh) ",7.81,11.0,6.86,not found,105,48.0,224,157
+Milk (fresh) ,7.81,11.0,6.86,not found,105,48.0,224,157
+"Oil (vegetable, fortified, food aid) ",18.0,30.6,5.27,2.63,1660.0,98.0,866,366
+Okra (dry) ,3.76,12.7,22.1,not found,316,10.0,52.0,217
+"Peas (yellow, split, food aid) ",4.25,3.38,5.3,1.42,1100.0,not found,63.0,61.0
+Sorghum flour ,11.4,1.52,74.4,not found,0.0,not found,18.7,not found
+"Fish (dry, katta) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+"Fish (dry, sprats) ",16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (jack) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (sail fish) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (skipjack tuna) ,19.0,0.94,0.08,0.0,219,36.0,18.0,376
+Fish (trenched sardinella) ,16.3,0.45,0.0,not found,213,54.0,11.0,308
+Fish (yellowfin tuna) ,19.0,0.94,0.08,0.0,219,36.0,18.0,376
+"Onions (red, imported) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+"Onions (red, local) ",0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Potatoes (imported) ,22.2,4.36,0.1,not found,40.0,55.0,4.0,537
+Potatoes (local) ,3.89,11.2,13.4,not found,221,68.0,34.0,170
+Rice (red nadu) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Rice (red) ,0.94,0.1,9.93,5.76,1.0,not found,17.0,186
+Bananas (medium size) ,0.73,0.22,20.1,15.8,not found,not found,not found,357
+Cauliflower ,0.0,0.0,3.53,not found,18.0,0.0,0.0,18.0
+Cheese (goat) ,23.3,34.0,2.44,0.33,654,100,707,1710.0
+"Onions (dry, local) ",9.0,3.0,67.6,not found,4190.0,2.0,280,1350.0
+Potatoes (medium size) ,3.0,16.1,42.6,not found,333,0.0,22.0,316
+Beans (sugar) ,0.0,0.32,99.6,99.8,1.0,not found,1.0,385
+"Meat (beef, minced) ",11.7,28.0,2.89,1.26,872,not found,15.0,1310.0
+"Meat (chicken, legs) ",23.9,5.95,0.0,not found,117,127,12.0,156
+"Meat (chicken, plucked) ",23.9,5.95,0.0,not found,117,127,12.0,156
+Yogurt ,10.3,0.37,3.64,3.27,36.0,5.0,111,61.0
+Beans (haricot) ,1.2,0.0,7.23,not found,0.0,0.0,36.0,30.0
+Oil (cotton) ,not found,not found,not found,not found,not found,not found,not found,not found
+Tea (green) ,1.06,0.44,14.0,8.99,5.0,not found,35.0,241
+Bread (common) ,9.43,3.59,49.2,5.34,477,not found,211,1130.0
+Cocoa (powder) ,19.6,13.7,57.9,not found,21.0,0.0,128,228
+Meat (veal) ,3.84,3.19,32.5,0.62,361,not found,11.0,729
+"Milk (powder, infant formula) ",7.81,11.0,6.86,not found,105,48.0,224,157
+Zucchini ,1.05,0.0,4.21,not found,0.0,0.0,21.0,21.0
+Beans (kidney red) ,22.5,1.06,61.3,not found,12.0,0.0,83.0,1410.0
+"Peas (yellow, split) ",4.25,3.38,5.3,1.42,1100.0,not found,63.0,61.0
+"Maize meal (white, breakfast) ",6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
+"Maize meal (white, roller) ",6.2,1.74,80.8,1.04,0.0,not found,0.0,1520.0
