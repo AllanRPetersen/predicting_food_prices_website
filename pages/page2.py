@@ -139,7 +139,17 @@ def app():
             In total there were 62 currencies which we needed to convert to a single currency
             in order to compare the prices. The list of currencies were:  ''')
 
-    st.write(price_2020_df['cur_name'].unique())
+    currencies = [
+        'AFN', 'AMD', 'AOA', 'ARS', 'BDT', 'BIF', 'BOB', 'BTN', 'BYR', 'CDF',
+        'COP', 'CVE', 'DJF', 'EGP', 'ETB', 'GHS', 'GMD', 'GNF', 'IDR', 'ILS',
+        'INR', 'IQD', 'IRR', 'JOD', 'JPY', 'KES', 'KGS', 'KHR', 'KZT', 'LAK',
+        'LBP', 'LKR', 'LRD', 'LYD', 'MMK', 'MNT', 'MRO', 'MWK', 'MXN', 'MZN',
+        'NAD', 'NGN', 'NPR', 'PEN', 'PHP', 'PKR', 'PYG', 'RWF', 'SLL', 'SOS',
+        'SSP', 'SYP', 'SZL', 'THB', 'TJS', 'TRY', 'UGX', 'USD', 'XAF', 'XOF',
+        'YER', 'ZMW'
+    ]
+
+    st.write((' ').join(currencies))
 
     st.write('''Each individual currency has a three letter abbreviation.
             The non-official abbreviation NIS (new Israeli shekel) was changed to ILS (Israeli new shekel).
