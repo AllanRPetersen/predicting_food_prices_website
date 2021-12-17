@@ -12,24 +12,24 @@ from utils import nutrients_super, nutrients_redux, nutrients_redux_2
 def app():
     st.markdown('## Predict whether the food will be expensive or not')
 
-    st.write('''
-        This webapp evaluates if a given food is, or will be expensive or not based on it's nutrient information, type of food and country.
-        The expensive or not expensive result represent a classification based on whether the cost of the food will be bellow or above 1 USD per kilogram.
-        The model has been trained on  2020 prices from 71 countries around the world.
-        ''')
-    st.write('''
-        Once all the information is collected, we call our own API that uses cloud processing to perform the prediction.
-        ''')
+    # st.write('''
+    #     This webapp evaluates if a given food is, or will be expensive or not based on it's nutrient information, type of food and country.
+    #     The expensive or not expensive result represent a classification based on whether the cost of the food will be bellow or above 1 USD per kilogram.
+    #     The model has been trained on  2020 prices from 71 countries around the world.
+    #     ''')
+    # st.write('''
+    #     Once all the information is collected, we call our own API that uses cloud processing to perform the prediction.
+    #     ''')
     ##################################################################
     'Radio function'
 
     display = st.radio('Select input mode', ('Automated', 'Manual'))
 
     if display == 'Automated':
-        st.write('''
-            Automated mode uses a series of functions to look for information of the food into the USDA database and automatically retrieves it's nutrients, enery content and category.
-            The CPI index is extracted for your selected country.
-            ''')
+        # st.write('''
+        #     Automated mode uses a series of functions to look for information of the food into the USDA database and automatically retrieves it's nutrients, enery content and category.
+        #     The CPI index is extracted for your selected country.
+        #     ''')
 
         food = st.text_input('Enter the food you want to calculate:', 'taco')
 
@@ -95,10 +95,10 @@ def app():
             st.write('I was not clicked 😞')
     if display == 'Manual':
 
-        st.write('''
-            Manual mode skips the USDA API funtionality in order to make the calculations with your prefered values.
-            Recommended in case you want to look for a strange or not registered food.
-            ''')
+        # st.write('''
+        #     Manual mode skips the USDA API funtionality in order to make the calculations with your prefered values.
+        #     Recommended in case you want to look for a strange or not registered food.
+        #     ''')
         options = ("Retail", "Wholesale")
 
         value = st.selectbox("Retail or Wholesale", options)

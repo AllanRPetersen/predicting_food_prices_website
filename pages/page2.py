@@ -239,6 +239,15 @@ def app():
         ''')
 
     st.write('''
+        This webapp evaluates if a given food is, or will be expensive or not based on it's nutrient information, type of food and country.
+        The expensive or not expensive result represent a classification based on whether the cost of the food will be bellow or above 1 USD per kilogram.
+        The model has been trained on  2020 prices from 71 countries around the world.
+        ''')
+    st.write('''
+        Once all the information is collected, we call our own API that uses cloud processing to perform the prediction.
+        ''')
+
+    st.write('''
         We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
 
         We had more than 80% of the data variance explained, with these improved results we proceeded to the next step.
