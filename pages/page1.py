@@ -12,7 +12,7 @@ from utils import nutrients_super, nutrients_redux, nutrients_redux_2
 def app():
     st.markdown('## Predict if the food will be expensive or not')
 
-    food = st.text_input('put the food you want to calculate:', 'Tacos')
+    food = st.text_input('Enter the food you want to calculate:', 'Tacos')
 
     result_2 = nutrients_super(food)
     dict1 = {}
@@ -36,7 +36,7 @@ def app():
 
     cpi = pd.read_csv('production_data/country_cpi.csv')
 
-    country = st.selectbox("Country", cpi)
+    country = st.selectbox("Country:", cpi)
 
     if st.button('Predict'):
         answer = cpi.loc[cpi['adm0_name'] == country]['2019'].to_list()[0]

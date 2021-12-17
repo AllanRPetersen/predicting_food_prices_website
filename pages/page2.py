@@ -28,7 +28,7 @@ def app():
     # Section 2:  Explaining the data of the project
     st.markdown('# Data')
     st.write(
-        '''Price of the foods were found as a dataset called Global Food Prices Database on Kaggle.
+        '''The price of the foods were found as a dataset called Global Food Prices Database on Kaggle.
     This dataset contained over 1 million rows of food prices from different markets around the world.'''
     )
     st.write('The raw dataset is displayed below:')
@@ -42,7 +42,7 @@ def app():
     price_df = get_dataframe_data()
 
     st.write(price_df.head())
-    st.write(f'Shape of dataset: {price_df.shape}')
+    st.write(f'Shape of dataset: (1560551, 18)')
 
     st.markdown('## Data Cleaning')
 
@@ -59,12 +59,12 @@ def app():
 
     st.write('''
         This new column was cleaned from any special charachcters (ex. !@#$$%*(-_/\)). Once cleaned,
-                we make a new dataframe with the unique values (types of food) present in the dataset, so the
-                API will look for the same information repeatedly, this is particularly important because the
+                we made a new dataframe with the unique values (types of food) present in the dataset, so the
+                API will not look for the same information repeatedly, this is particularly important because the
                 USDA API has a limit of 3,600 requests per hour.
         ''')
 
-    st.write('''We aim to train our with the price of food in 2020.
+    st.write('''We aim to train our model with the price of food in 2020.
             Hence, the dataframe was filtered by the year 2020 using Boolean logic.'''
              )
 
@@ -96,26 +96,26 @@ def app():
 
     st.write('''
         In order to extract the information we wanted (nutrient values and food category) we couldn't just use the
-        USDA raw API, because the response had many other parameters, so we had to built a series of functions
+        USDA raw API, because the response had many other parameters, so we had to build a series of functions
         that worked with the API.
 
-        First of all, we selected a fixed list of nutrient information we were interested on (
+        First of all, we selected a fixed list of nutrient information we were interested in (
             protein,
             fat,
             carbohydrates,
             sugar,
             sodium,
             calcium
-            and cholesterol).Besides that, we also extracted the energy content in kcal, the portion size all of these nutrients were measured with,
-            and the category of food it belongs according to the USDA data.
+            and cholesterol). Besides that, we also extracted the energy content in kcal, the portion size that the nutrients were measured with,
+            and the category of food it belongs to according to the USDA data.
         ''')
 
     st.write('''
         There are two main functions, one that look for a food type within "foundation" foods, and the other for branded foods.
         The third funtion uses the other two and has a fail safe system in order to retrieve the most information possible,
-        that's because some foods are estrictly processed foods, so they will be a branded food instead a of a fundation one.
+        that's because some foods are strictly processed foods, so they will be a branded food instead a of a foundation one.
 
-        Here it is an example of on of the functions and the information it retrieves:
+        Here it is an example of the functions and the information it retrieves:
 
 
         ''')
@@ -123,15 +123,15 @@ def app():
     from utils import nutrients_redux, nutrients_redux_2, nutrients_super
 
     food = st.text_input(
-        '** Put the name of the food you want to retrieve info:')
+        '** Type the name of the food you want to retrieve info of:')
 
     display = nutrients_super(food)
 
     st.write(display)
 
     st.write('''
-        This applyied to our unique values of food table retrieved us a table of type of food with all of the mentioned information.
-        We had to drop the cholesterol column since it was missing more than 30% of the data
+        This retrieved a table for the desired food containing the required nutritional information.
+        We had to drop the cholesterol column since it was missing more than 30% of the data.
         ''')
 
     st.markdown('## Currency')
@@ -156,7 +156,7 @@ def app():
             The non-official abbreviation NIS (new Israeli shekel) was changed to ILS (Israeli new shekel).
             We passed a list of the abbreviations to an API called currencylayer.
             SSP (South Sudan Pound) had to be removed from the list as our API did not have a value for it.
-            SPP was later added manually. The API returned us a list of conversion rates to US dollars as a JSON.
+            SSP was later added manually. The API returned us a list of conversion rates to US dollars as a JSON.
             This allowed us to convert the prices to US dollars.''')
 
     def get_dataframe_data_2():
@@ -203,7 +203,7 @@ def app():
 
     st.write(grouped_cleaned_data.head(3))
 
-    st.markdown('### Table join')
+    st.markdown('## Table join')
     st.write('''
         After all the processing of the USDA nutrient api function and the currency conversion, we inner joined the tables, and further cleaned the new integrated table.
         ''')
@@ -215,33 +215,33 @@ def app():
 
     st.write('''
         We built a small pipeline to preprocess the needed data. The pipeline included a Min Max scaler for numerical data and One Hot Encoder for categorical data.
-        Once fitted and transformed, the data was rady for modelling.
+        Once fitted and transformed, the data was ready for modelling.
         ''')
     st.write('''
 
         We tried different models: Basic linear regressor, KNN regressor, Ridge regressor and a SVR.
-        We saw not so very good results with neither of them, so after trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
-        Unfortunately it was below 50% of the variance explained and vary greatly after each "X" and "y" split, we suspected the data wasn't enough after all the cleaning and selection.
+        None of the models provided the results we were hoping for. After trying and modifying different parameters of the models we found our "best" performance was given by the KNN regresor.
+        Unfortunately it was below 50% of the variance explained and varied greatly after each "X" and "y" split, we suspected that after all the cleaning and selection we didn't have enough data.
         ''')
 
     st.markdown('### Second dataset')
 
     st.write('''
-        After the bad results we decided to repeat the whole process but this time with a New Zeland food dataset, unfortunately we got simillar results.
-        So we tought the features we processed and selected weren't enough to explain the price change among the food products.
+        After the poor results we decided to repeat the whole process but this time with a New Zeland food dataset, unfortunately we got simillar results.
+        So we thought the features we processed and selected weren't enough to explain the price change among the food products.
         ''')
 
     st.markdown('### A new aproach')
 
     st.write('''
-        After the dissapointing results of the regression models, we decided to change the aim of the project and fit better the data we already had, so we changed our target, instead of predicting the numeric price,
+        After the dissapointing results of the regression models, we decided to change the aim of the project to better fit the data we already had, so we changed our target, instead of predicting the numeric price,
         we predict if a food product would be expensive or cheap using the nutrients and the other features previously presented.
         ''')
 
     st.write('''
         We first performed a Logistic regression and a Support Vector Classification, with both of them we found much better results.
 
-        We had more than 80% of the data variance explained, with these better results we proceed to the next step.
+        We had more than 80% of the data variance explained, with these improved results we proceeded to the next step.
         ''')
 
     st.markdown('### Neural Network Model')
@@ -250,7 +250,7 @@ def app():
         We built a Neural Network to see if we get better results due to the variety of features we selected. For this task we used Tensorflow Keras.
         ''')
     st.write('''
-        The network consisted in;\n
+        The network consisted of:\n
             - An input dense layer of 71 dimensions with 256 neurons with a relu activation. \n
             - A hidden dense layer of 128 neurons with a relu activation.\n
             - A second hidden dense layer of 64 neurons and a relu activation.\n
@@ -263,21 +263,21 @@ def app():
     image = Image.open('./production_data/Loss_and_ Accuracy.png')
 
     st.write('''
-        We obtained an average loss and accuracy of 0.255 and 0.902 respectively, which is considered a good score, more if we compared with the baseline probability of predicting correctly based only on the data distribution.\n
+        We obtained an average loss and accuracy of 0.255 and 0.902 respectively, which is considered a good score, if compared with the baseline models probability of predicting correctly based only on the data distribution.\n
         The baseline is 0.781, our model has an accuracy of 0.902.
         ''')
 
     st.image(
         image,
         caption=
-        'Graph showing the loss and accuracy of the model over170 iterations')
+        'Graph showing the loss and accuracy of the model over 170 iterations')
     ##############################################################################
 
     #Section 4:  Showcase how we would have liked the app to work
     st.markdown('# Showcasing how we would have liked the APP to work')
 
     st.write(
-        '''Despite the limited success of our models ability predict the price of food,
+        '''Despite the limited success of our models ability to predict the price of food,
             we will now showcase how our app should have worked. Below you can type in name of the food
             you wish to know the price of and the app will return a price and a picture of the food.'''
     )
@@ -305,7 +305,7 @@ def app():
     st.markdown('# Our APP')
 
     st.write('''Although our model was not able to predict the price of food.
-        We were able to predict whether the food would be expensive or not, so right bellow an there is a showcase of how the model can be integrated in a web application.'''
+        We were able to predict whether the food would be expensive or not, below there is a showcase of how the model can be integrated in a web application.'''
              )
 
     st.markdown('# Food Prediction APP')
@@ -409,18 +409,18 @@ def app():
     st.markdown('## Deployment')
 
     st.write('''
-        For deployment first we had to make a docker container because the model was big enough to not be able to load into heroku.
+        For deployment first we had to make a docker container because the model was too big to load onto heroku.
         After that we deployed the webapp with heroku
         ''')
     st.markdown('# Conclusions')
 
     st.write('''
-        Since we tried different aproaches, we have various conclusions:
+        Since we tried different approaches, we have various conclusions:
         ''')
     st.write('''
-        - Machine learning regression models did not suit properly the problem we tried to solve, at least not with the features we have at hand.
+        - Machine learning regression models did not suit the problem we tried to solve, at least not with the features we have at hand.
         - Our data was better suited for classification models.
-        - Classification models such as logistic regression and support vector classification perfomed considerably better at making a prediction.
+        - Classification models such as logistic regression and support vector classification perfomed considerably better than regression models at making a prediction.
         - Neural Networks with a binary output layer worked better at classifying than regular machine learning methods, with aproximately 12% of better precision than baseline.
         ''')
 
