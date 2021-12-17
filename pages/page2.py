@@ -29,7 +29,7 @@ def app():
     st.markdown('# Data')
     st.write(
         '''Price of the foods were found as a dataset called Global Food Prices Database on Kaggle.
-    This dataset contained over 1 million rows of food prices from different markets around the world.'''
+    This dataset contained over 150k rows of food prices from different markets around the world.'''
     )
     st.write('The raw dataset is displayed below:')
 
