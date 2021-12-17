@@ -126,7 +126,7 @@ def app():
 
     display = nutrients_super(food)
 
-    display
+    st.write(display)
 
     st.write('''
         This applyied to our unique values of food table retrieved us a table of type of food with all of the mentioned information.
