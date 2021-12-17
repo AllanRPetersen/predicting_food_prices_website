@@ -37,7 +37,7 @@ def app():
             '''
         )
 
-        food = st.text_input('put the food you want to calculate:')
+        food = st.text_input('put the food you want to calculate:','taco')
 
         result_2 = nutrients_super(food)
         dict1 = {}
@@ -45,6 +45,20 @@ def app():
             dict1[k] = [v]
         result_1 = pd.DataFrame.from_dict(dict1).replace('not found', np.nan)
 
+
+        ####################### image #########################
+        api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
+        query = food
+        response = requests.get(
+            f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
+        )
+        image_small = response.json()['results'][0]['urls']['small']
+        st.image(
+            image_small,
+            caption=
+            f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
+        )
+        #######################################################
         st.write(result_2)
 
         cpi = pd.read_csv('raw_data/country_cpi.csv')
@@ -77,11 +91,11 @@ def app():
             if prediction.json() > 0.5:
 
                 result = 'Expensive'
-                st.write(result)
+                st.markdown(f'### **{result}**')
 
             else:
                 result = 'Not Expensive'
-                st.write(result)
+                st.markdown(f'### **{result}**')
         else:
             st.write('I was not clicked 😞')
     if display == 'Manual':
@@ -126,18 +140,6 @@ def app():
         food_cat = pd.read_csv('production_data/food_categories.csv')
         #st.write(food_cat.head())
 
-        api_key = 'HbaYhOLNuzBDKvfs0qvVEB4Ymu1PxQmru9YdXvv2jfc'
-        query = food
-        response = requests.get(
-            f'https://api.unsplash.com/search/photos?client_id={api_key}&query={query}'
-        )
-        image_small = response.json()['results'][0]['urls']['small']
-        st.image(
-            image_small,
-            caption=
-            f' {response.json()["results"][0]["alt_description"]} by {response.json()["results"][0]["user"]["name"]}'
-        )
-
         cpi = pd.read_csv('production_data/country_cpi.csv')
 
 
@@ -170,11 +172,11 @@ def app():
             if prediction.json() > 0.5:
 
                 result = 'Expensive'
-                st.write(result)
+                st.markdown(f'### **{result}**')
 
             else:
                 result = 'Not Expensive'
-                st.write(result)
+                st.markdown(f'### **{result}**')
 
         else:
             st.write('I was not clicked 😞')
