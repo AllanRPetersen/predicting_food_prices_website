@@ -8,8 +8,8 @@ import numpy as np
 
 
 def app():
-    #nn_model = models.load_model('raw_data/neural_network_v1.h5')
-    #preproc = joblib.load('raw_data/preprocessor_v1.joblib')
+    #nn_model = models.load_model('production_data/neural_network_v1.h5')
+    #preproc = joblib.load('production_data/preprocessor_v1.joblib')
 
     ##############################################################################
 
@@ -36,7 +36,8 @@ def app():
     #@st.cache
     def get_dataframe_data():
 
-        return pd.read_csv('raw_data/wfp_food_prices_database.csv', nrows=100)
+        return pd.read_csv('production_data/short_food_prices_database.csv',
+                           nrows=100)
 
     price_df = get_dataframe_data()
 
@@ -160,7 +161,7 @@ def app():
 
     def get_dataframe_data_2():
 
-        return pd.read_csv('raw_data/price_with_USD.csv')
+        return pd.read_csv('production_data/price_with_USD.csv')
 
     price_with_USD = get_dataframe_data_2()
 
@@ -196,7 +197,7 @@ def app():
 
     def get_dataframe_data_3():
 
-        return pd.read_csv('raw_data/grouped_cleaned_data.csv')
+        return pd.read_csv('production_data/grouped_cleaned_data.csv')
 
     grouped_cleaned_data = get_dataframe_data_3()
 
@@ -259,7 +260,7 @@ def app():
         ''')
     from PIL import Image
 
-    image = Image.open('./raw_data/Loss_and_ Accuracy.png')
+    image = Image.open('./production_data/Loss_and_ Accuracy.png')
 
     st.write('''
         We obtained an average loss and accuracy of 0.255 and 0.902 respectively, which is considered a good score, more if we compared with the baseline probability of predicting correctly based only on the data distribution.\n
@@ -341,7 +342,7 @@ def app():
     kcal = st.text_input('Amount of calories (kcal):', '8')
     st.write('  ')
 
-    food_cat = pd.read_csv('raw_data/food_categories.csv')
+    food_cat = pd.read_csv('production_data/food_categories.csv')
     #st.write(food_cat.head())
 
     category = st.selectbox("Food Category", food_cat)
